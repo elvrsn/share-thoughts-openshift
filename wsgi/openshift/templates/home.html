@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row top-buffer">
+  <div class="col-xs-12 col-sm-12 col-md-12 lucida">{% for content in contents%}
+    <div class="top-padding"><h3>{{content.title |truncatewords:10}}</h3></div>
+    <div class="justify para"><p>{% autoescape off %}{% if content.text|length > 60 %}{{ content.text |truncatewords:60 }}{% endif %}{% endautoescape %}
+    {% if content.text|length > 60 %}<a href='/article/?id={{content.id}}'> Read More</a>{% endif %}</p></div>{% endfor %}
+  </div>
+</div>
+{% endblock %}

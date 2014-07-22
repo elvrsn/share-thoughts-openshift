@@ -1,0 +1,102 @@
+.header {
+border-bottom: 2px solid #F2F2F2;
+background: url("bg_img.jpg") repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+
+.justify {
+    text-align: justify;
+}
+.bottom-border {
+  border-bottom: 2px solid #787878;
+}
+.top-padding {
+    padding-top:10px;
+}
+.top-padding-25 {
+    padding-top:25px;
+}
+
+.footer {
+    padding-top:10px;
+    background: url("header_bg_grad.jpg") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    color:#fff;
+}
+.logo {
+    display: block;
+    float: left;
+    font-family: 'Brush Script MT',cursive;
+    font-size: 30px;
+    font-weight: 500;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 10px;
+    text-align: center;
+}
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
+.top-buffer {
+    margin-top:20px; 
+}
+
+.centered {
+    text-align:center;
+}
+
+.logo-text:hover,
+.logo-text:visited,
+.logo-text:active {
+    /*color:#428bca;*/
+    color:#fff; 
+    text-decoration: none;
+}
+
+.clean_anchor {
+    color:#fff;
+    text-decoration: none;
+}
+.clean_anchor_text:hover,
+.clean_anchor_text:visited,
+.clean_anchor_text:active {
+    color:#fff;
+    text-decoration: none;
+}
+
+.content-color {
+    background-color:#F0F0F0;
+}
+
+.field-validation-error
+{
+     color: #b94a48;
+}
+
+.lucida {
+  font-family:Lucida Sans Unicode;
+}
+
+.twenty-pix {
+  font-size:20px;
+}
+.recaptchatable .recaptcha_image_cell, #recaptcha_table {
+    background-color:#F0F0F0 !important;
+}
+  
+#recaptcha_table {
+    border-color:#99AACC !important;
+    table-layout: auto;
+}
+  
+#recaptcha_response_field {
+    border-color: #99AACC !important; 
+    background-color: #fff !important;
+}
+
+.recaptcha_only_if_privacy {
+    color:#000;
+}
+
+.para {
+word-wrap: break-word;
+}
