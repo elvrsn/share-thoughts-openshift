@@ -14,6 +14,13 @@ class TextTable(models.Model):
     category = models.CharField(max_length=50)
     timestamp = models.CharField(max_length=50)
 
+class MobileTextTable(models.Model):
+    title = models.CharField(max_length=100)
+    text = models.TextField()
+    tags = models.CharField(max_length=500)
+    category = models.CharField(max_length=50)
+    timestamp = models.CharField(max_length=50)
+
 class Category(models.Model):
     name = models.CharField(max_length=50)
 

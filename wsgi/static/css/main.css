@@ -1,6 +1,7 @@
 .header {
 border-bottom: 2px solid #F2F2F2;
-background: url("bg_img.jpg") repeat scroll 0 0 rgba(0, 0, 0, 0);
+/* background: url("bg_img.jpg") repeat scroll 0 0 rgba(0, 0, 0, 0);*/
+background: #000000;
 }
 
 .justify {
@@ -18,7 +19,8 @@ background: url("bg_img.jpg") repeat scroll 0 0 rgba(0, 0, 0, 0);
 
 .footer {
     padding-top:10px;
-    background: url("header_bg_grad.jpg") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    /*background: url("header_bg_grad.jpg") repeat scroll 0 0 rgba(0, 0, 0, 0);*/
+    background: #000000;
     color:#fff;
 }
 .logo {
@@ -52,6 +54,18 @@ background: url("bg_img.jpg") repeat scroll 0 0 rgba(0, 0, 0, 0);
     text-decoration: none;
 }
 
+.clean_anchor2 {
+  text-decoration: none;
+    color:#000;
+}
+
+.clean_anchor_text2:hover,
+.clean_anchor_text2:visited,
+.clean_anchor_text2:active {
+    color:#000;
+    text-decoration: none;
+}
+
 .clean_anchor {
     color:#fff;
     text-decoration: none;
@@ -65,6 +79,7 @@ background: url("bg_img.jpg") repeat scroll 0 0 rgba(0, 0, 0, 0);
 
 .content-color {
     background-color:#F0F0F0;
+    /*background-color:#FFFFFF;*/
 }
 
 .field-validation-error

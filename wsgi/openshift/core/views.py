@@ -13,6 +13,25 @@ def getthoughts(request):
     response_data = fetch_thoughts()
     return HttpResponse(json.dumps(response_data), content_type="application/json")
 
+def addthought(request):
+    if request.method=='GET':
+      print "Request : ",request
+      title = request.GET.get('title','')
+      content = request.GET.get('content','')
+      result = save_thought(title,content)
+      return HttpResponse(json.dumps(result), content_type="application/json")
+    else:
+      result = {'status':[{'success':0}]}
+      return HttpResponse(json.dumps(result), content_type="application/json")
+
+def getcategory(request):
+    if request.method == "GET":
+      category =  request.GET.get('id','')
+      contents = get_thoughts_by_category(category)
+      for content in contents:
+        content.tags = content.tags.split(',')
+      return render_to_response('home.html',{'share':True,'contents':contents},context_instance=RequestContext(request))
+
 def home(request):
     contents = retrieve_data()
     for content in contents:

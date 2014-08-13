@@ -127,3 +127,4 @@ Django project directory structure
      		static/	(Public static content gets served here)
      			README
 
+From HERE you can start with your own application.

@@ -1,22 +1,18 @@
 from django.conf.urls import patterns, include, url
-#from django.contrib import admin
-#admin.autodiscover()
-import os
-from views import *
+from django.views.generic.base import TemplateView
 
-urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'iwas.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
-    url(r'^$', home),
-    url(r'^search/$', search),
-    url(r'^article/$', article),
-    url(r'^share/$', toshare),
-    url(r'^about/$', about),
-    url(r'^thoughts/$', getthoughts),
-    url(r'^feedback/$', feedback),
-    url(r'^thanks/$',thanks,name="thanks_page"),
-    url(r'^feedback_thanks/$', feedback_thanks),
-    #url(r'^admin/', include(admin.site.urls)),
+urlpatterns = patterns('core.views',
+    url(r'^$', 'home'),
+    url(r'^search/$', 'search'),
+    url(r'^article/$', 'article'),
+    url(r'^share/$', 'toshare'),
+    url(r'^about/$', 'about'),
+    url(r'^thoughts/$', 'getthoughts'),
+    url(r'^addthought/$', 'addthought'),
+    url(r'^feedback/$', 'feedback'),
+    url(r'^category/$', 'getcategory'),
+    url(r'^thanks/$','thanks',name="thanks_page"),
+    url(r'^feedback_thanks/$', 'feedback_thanks'),
+    url(r'^sitemap/$',TemplateView.as_view(template_name="sitemap.html"))
 )
 

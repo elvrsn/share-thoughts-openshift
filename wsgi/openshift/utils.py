@@ -34,6 +34,13 @@ def save_text_for_review(title, text, tags, category):
     time = str(datetime.datetime.now())
     ReviewTable.objects.create(title=title,text=text,tags=tags,timestamp=time,category=category)
 
+def save_thought(title, content):
+    try:
+      time = str(datetime.datetime.now())
+      MobileTextTable.objects.create(title=title,text=content,tags="",timestamp=time,category="")
+      return {'status':[{'success':1}]}
+    except:
+      return {'status':[{'success':0}]}
 
 def save_text(title,text,tags,category):
     time = str(datetime.datetime.now())
@@ -46,8 +53,12 @@ def save_feedback(comment, ip_address):
 def retrieve_data():
     return TextTable.objects.all().order_by('-timestamp')[0:10]
 
+def get_thoughts_by_category(category):
+    return TextTable.objects.all().filter(category=category) 
+
+
 def fetch_thoughts():
-    thoughts = TextTable.objects.all().order_by('-timestamp')[0:10]
+    thoughts = MobileTextTable.objects.all().order_by('-timestamp')[0:10]
     thought_list = []
     for thought in thoughts:
       thought_dict = {}
@@ -55,7 +66,7 @@ def fetch_thoughts():
       thought_dict['title'] = thought.title
       thought_dict['content'] = thought.text
       thought_list.append(thought_dict)
-    return thought_list
+    return {'thought_list' : thought_list}
       
 
 def search_tag(tag):

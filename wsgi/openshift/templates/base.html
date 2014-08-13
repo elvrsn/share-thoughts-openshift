@@ -8,6 +8,9 @@
   <title>Share Thoughts - ideas worth a share</title>
   <link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet" type='text/css' />
   <link href="{{ STATIC_URL }}css/main.css" rel="stylesheet" type='text/css' />
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.14/angular.min.js"></script>
 </head>
 <body>
@@ -19,39 +22,65 @@
   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-  <div class='container-fluid content-color'>
   {% block header %}
-    <div class='row header'>
-      <div class="col-xs-8 col-sm-8 col-md-4"><a class='logo logo-text' href='/'>Share Thoughts</a></div>
-      <div class="hidden-xs hidden-sm col-md-4 top-padding lucida">
-        <form role="form" name="content-form" method="get" action='/search/'>
-          <input class="form-control" type="text" name="search-tag" placeholder="Search Thoughts"></input>
-        </form>
+  <nav class="navbar navbar-inverse lucida" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand logo logo-text" href="/"><img src='{{ STATIC_URL }}images/logo.png'></a>
       </div>
-      {% if share %}
-        <div class="col-xs-4 col-sm-4 hidden-md hidden-lg top-padding lucida">
-          <div class="pull-right"><a href='/share'><button type="button" class="btn btn-default btn-sm"><b>Share?</b></button></a></div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown">Categories <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="/category/?id=Arts"> Arts</a></li>
+	      <li><a href="/category/?id=Business"> Business</a></li>
+              <li><a href="/category/?id=Entertainment"> Entertainment</a></li>
+              <li><a href="/category/?id=History"> History</a></li>
+	      <li><a href="/category/?id=Mathematics"> Mathematics</a></li>
+	      <li><a href="/category/?id=Science"> Science</a></li>
+	      <li><a href="/category/?id=Sports"> Sports</a></li>
+              <li><a href="/category/?id=Technology"> Technology</a></li>
+              <li><a href="/category/?id=Others"> Others</a></li>
+            </ul>
+          </li>
+          <li><a href="/share">Submit</a></li>
+	  <li><a href="/about">About</a></li>
+	  <li><a href="/feedback">Contact</a></li>
+        </ul>
+
+        <div class="col-sm-4 col-md-3">
+          <form class="navbar-form" role="search" method="get" action='/search/'>
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search" name="search-tag" id="srch-term">
+              <div class="input-group-btn">
+                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+              </div>
+            </div>
+          </form>
         </div>
-        <div class="hidden-xs hidden-sm col-md-4 top-padding lucida">
-          <div class="pull-right"><a href='/share'><button type="button" class="btn btn-default btn-sm"><b>Share thoughts?</b></button></a></div>
-        </div>
-      {% endif %}
-    </div>
-    <div class="row top-padding">
-      <div class="col-xs-12 col-sm-10 hidden-md hidden-lg col-centered lucida">
-        <form role="form" name="content-form" method="get" action='/search/'>
-          <input class="form-control" type="text" name="search-tag" placeholder="Search Thoughts"></input>
-        </form>
+
       </div>
     </div>
+  </nav>
   {% endblock %}
+  <div class='container-fluid content-color'>
   {% block content %}
   {% endblock %}
   {% block footer %}
     <div class='row footer top-buffer'>
       <div class="col-xs-12 col-sm-12 col-md-12 lucida">
         <div class="text-center">
-          <p><a class='clean_anchor clean_anchor_text' href="/about">About the site</a> | <a class='clean_anchor clean_anchor_text' href="/feedback">Feedback</a></p>
+          <p><a class='clean_anchor clean_anchor_text' href="/about">About the site</a> | 
+             <a class='clean_anchor clean_anchor_text' href="/feedback">Feedback</a> | 
+             <a class='clean_anchor clean_anchor_text' href="/sitemap">Site Map</a>
+          </p>
           <p>Copyright 2014 &copy; elvrsn</p>
         </div>
       </div>
